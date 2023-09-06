@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parachutes
 {
-    internal class Plane
+    public class Plane
     {
 
         private string[] view =
@@ -18,6 +18,25 @@ namespace Parachutes
             @"  \_______ --------- __>-} ",
             @"        \_____|_____/   |  "
         };
+  
+        public int x = 0;
+        public int y = 1;
 
+        public void Draw()
+        {
+            for (int i = 0; i < view.Length; i++)
+            {
+                
+               Console.SetCursorPosition(x,y+i);
+                Console.WriteLine(view[i]);
+                
+            }
+       
+        }
+        
+        public void update()
+        {
+          
+        }
     }
 }

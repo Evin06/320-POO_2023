@@ -5,12 +5,20 @@ namespace Snail1
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        public class Snail
         {
-            string Snail = " _@_ö";
-            string Mort = "____";
-            int snailvie = 50;
-            int x= 0;
+            private int _x;
+            private int _y;
+            private ConsoleColor _color;
+            private int _energy = 50;
+
+            private const string SNAIL = "_@_ö";
+            private const string NO_SNAIL = "    ";
+            private const string DEAD_SNAIL = "____";
+            static void Main(string[] args)
+        {
+           
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.CursorVisible = false;
 

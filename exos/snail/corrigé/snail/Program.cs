@@ -3,7 +3,7 @@
 Console.Clear();
 Console.CursorVisible = false;
 
-Snail snail = new Snail(ConsoleColor.Blue);
+Snail snail = new Snail();
 
 while (snail.isAlive())
 {
