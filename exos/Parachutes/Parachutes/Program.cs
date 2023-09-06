@@ -13,6 +13,7 @@
 
             while (true) 
             {
+                Console.Clear();
                 //modifier le modèle
                 plane.update();
                 //modifier ce que l'on voit 

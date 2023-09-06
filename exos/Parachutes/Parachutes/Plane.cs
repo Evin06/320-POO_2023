@@ -36,7 +36,7 @@ namespace Parachutes
         
         public void update()
         {
-          
+            x++;
         }
     }
 }
