@@ -8,7 +8,7 @@ namespace Parachutes
 {
     public class Plane
     {
-
+        //"dessin" de l'avion 
         private string[] view =
         {
             @" _                         ",
@@ -18,22 +18,21 @@ namespace Parachutes
             @"  \_______ --------- __>-} ",
             @"        \_____|_____/   |  "
         };
-  
+
         public int x = 0;
         public int y = 1;
+        public Para bob = new Para();
 
+        //affiche l'avion 
         public void Draw()
         {
             for (int i = 0; i < view.Length; i++)
             {
-                
-               Console.SetCursorPosition(x,y+i);
+                Console.SetCursorPosition(x, y + i);
                 Console.WriteLine(view[i]);
-                
             }
-       
         }
-        
+        //permet de bouger l'avion
         public void update()
         {
             x++;
