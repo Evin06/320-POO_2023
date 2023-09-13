@@ -33,10 +33,10 @@ namespace Parachutes
 
         private const int PARA_HEIGHT = 6;
         public int x;
-        public int altitude;
+        public int y;
         string name;
         public bool parachuteopen;
-        
+
         //faire le mouvement du parachutiste 
 
         //afficher le parachutiste 
@@ -45,21 +45,25 @@ namespace Parachutes
             for (int i = 0; i < withoutParachute.Length; i++)
             {
 
-                Console.SetCursorPosition( x , altitude + i);
+                Console.SetCursorPosition(x, y + i);
                 Console.WriteLine(withParachute[i]);
             }
         }
         public void update()
         {
             // si le parachute est ouvert le parachutiste descent lentement 
-            if (parachuteopen)
+            if (y <= Config.SCREEN_HEIGHT - PARA_HEIGHT - 4)
             {
-                altitude -= 1;
-            }
-            // si le parachute est fermé le parachutiste descent plus le vite 
-            else
-            {
-                altitude -= 3;
+                if (parachuteopen)
+                {
+                    y += 1;
+                }
+                // si le parachute est fermé le parachutiste descent plus le vite 
+                else
+                {
+                    y += 3;
+                }
+
             }
         }
 

@@ -43,12 +43,16 @@
                 Console.Clear();
                 //modifier le modèle
                 plane.update();
+                if(para != null)
+                {
+                    para.update();
+                }
                 //modifier ce que l'on voit 
                 plane.Draw();
                 if (para != null)
                 {
                     para.Draw();
-                   
+           
                 }
                 //temporiser
                 Thread.Sleep(50);
