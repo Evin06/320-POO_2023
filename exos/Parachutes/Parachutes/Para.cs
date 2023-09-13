@@ -9,6 +9,7 @@ namespace Parachutes
     public class Para
     {
 
+        //parachutiste sans parachute 
         private string[] withParachute =
         {
              @"     ",
@@ -19,6 +20,7 @@ namespace Parachutes
              @" / \ ",
          };
 
+        //parachutiste avec parachute
         private string[] withoutParachute =
         {
              @" ___ ",
@@ -29,21 +31,36 @@ namespace Parachutes
              @" / \ ",
          };
 
-        int X;
+        private const int PARA_HEIGHT = 6;
+        public int x;
         public int altitude;
-        string nom;
+        string name;
+        public bool parachuteopen;
         
-        public void update()
-        {
-            for (int i = 0; i < withParachute.Length; i++)
-            {
+        //faire le mouvement du parachutiste 
 
-            }
-        }
-
+        //afficher le parachutiste 
         public void Draw()
         {
+            for (int i = 0; i < withoutParachute.Length; i++)
+            {
 
+                Console.SetCursorPosition( x , altitude + i);
+                Console.WriteLine(withParachute[i]);
+            }
+        }
+        public void update()
+        {
+            // si le parachute est ouvert le parachutiste descent lentement 
+            if (parachuteopen)
+            {
+                altitude -= 1;
+            }
+            // si le parachute est fermé le parachutiste descent plus le vite 
+            else
+            {
+                altitude -= 3;
+            }
         }
 
     }

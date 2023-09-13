@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ConsoleKeyInfo keyPressed;
+
 
             //ne pas afficher le cursor
             Console.CursorVisible = false;
@@ -13,32 +13,48 @@
             Console.WindowHeight = Config.SCREEN_HEIGHT;
             Console.WindowWidth = Config.SCREEN_WIDTH;
 
+            ConsoleKeyInfo keyPressed;
+
+
             // 
             Plane plane = new Plane();
+            Para para = null;
 
             while (true)
             {
+
+                if (Console.KeyAvailable) // L'utilisateur a pressé une touche
+                {
+                    keyPressed = Console.ReadKey(false);
+                    switch (keyPressed.Key)
+                    {
+                        case ConsoleKey.Escape:
+                            System.Environment.Exit(0);
+                            break;
+                        case ConsoleKey.Spacebar:
+                            para = plane.parachutist;
+                            para.x = plane.x;
+                            break;
+
+                    }
+                }
+
                 //supprime l'écran
                 Console.Clear();
                 //modifier le modèle
                 plane.update();
                 //modifier ce que l'on voit 
                 plane.Draw();
-                //temporiser
-                Thread.Sleep(90);
-            }
-
-            if (Console.KeyAvailable) // L'utilisateur a pressé une touche
-            {
-                keyPressed = Console.ReadKey(false);
-                switch (keyPressed.Key)
+                if (para != null)
                 {
-                    case ConsoleKey.Escape:
-
-                        break;
-
+                    para.Draw();
+                   
                 }
+                //temporiser
+                Thread.Sleep(50);
             }
+
+
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Parachutes
 
         public int x = 0;
         public int y = 1;
-        public Para bob = new Para();
+        public Para parachutist = new Para();
 
         //affiche l'avion 
         public void Draw()
@@ -36,6 +36,6 @@ namespace Parachutes
         public void update()
         {
             x++;
-        }
+        }    
     }
 }
